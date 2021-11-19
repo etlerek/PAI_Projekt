@@ -13,16 +13,6 @@ body{
     align-items: center;
 }
 
-.logo{
-    
-    justify-self: center;
-}
-
-.login_container{
-
-    justify-self: center;
-}
-
 form{
     display: flex;
     flex-direction: column;
@@ -79,8 +69,15 @@ p{
         font-size: 35px;
     }
 
+    .login_conainer {
+        width: 80%;
+        height: 40%;
+    }
 
-
+    .logo{
+        width: 500px;
+    }
+    
     form{
         height: 100%;
         width: 100%;

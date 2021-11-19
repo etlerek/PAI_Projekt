@@ -9,7 +9,7 @@ class DefaultController extends AppController {
         $this -> render('login');
     }
 
-    public function dashboard() {
+    public function map() {
 
         //TODO: read data from database
 
@@ -21,7 +21,7 @@ class DefaultController extends AppController {
 
         $animals = ['dog','cat','rat','cow','bird'];
 
-        $this -> render('dashboard', ['animals' => $animals]);
+        $this -> render('map', ['animals' => $animals]);
     }
 
 }
