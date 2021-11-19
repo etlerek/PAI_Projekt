@@ -12,8 +12,8 @@ class Router{
             $controller -> login();
         }
 
-        if($url == 'dashboard'){
-            $controller -> dashboard();
+        if($url == 'map'){
+            $controller -> map();
         }
         
         //echo 'router: '.$url;
