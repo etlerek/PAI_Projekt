@@ -15,6 +15,10 @@ class Router{
         if($url == 'map'){
             $controller -> map();
         }
+
+        if($url == 'test'){
+            $controller -> test();
+        }
         
         //echo 'router: '.$url;
     }
