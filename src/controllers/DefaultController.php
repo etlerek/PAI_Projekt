@@ -19,9 +19,12 @@ class DefaultController extends AppController {
 
         //cokolwiek
 
-        $animals = ['dog','cat','rat','cow','bird'];
+        $this -> render('map',);
+    }
 
-        $this -> render('map', ['animals' => $animals]);
+    public function test() {
+
+        $this -> render('test');
     }
 
 }
