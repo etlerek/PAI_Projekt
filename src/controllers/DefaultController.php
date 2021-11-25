@@ -22,9 +22,9 @@ class DefaultController extends AppController {
         $this -> render('map',);
     }
 
-    public function test() {
+    public function home() {
 
-        $this -> render('test');
+        $this -> render('home');
     }
 
 }
