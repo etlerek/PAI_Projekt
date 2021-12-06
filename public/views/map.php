@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Demo: Add custom markers in Mapbox GL JS</title>
+    <title>MAP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
@@ -40,6 +40,7 @@
         </div>
         <div id="map">
             <script>
+
             mapboxgl.accessToken = 'pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYmwzbDg2cWpvMzFxdzhnenVhbzVlIn0.un-kVFvpWtxiliFoYQ5p6w';
 
             const geojson = {
@@ -71,8 +72,8 @@
             };
 
             const map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/light-v10',
+                container: 'map.php',
+                style: 'mapbox://styles/paulsnakes/ck4ezdhmj0yit1cphc6a3m3ld',
                 center: [-96, 37.8],
                 zoom: 3
             });
@@ -96,8 +97,8 @@
             }
             </script>
             <div class = "map_buttons">
-                <button class = "pin_plus"> profile </button> 
-                <button class = "profile"> + </button> 
+                <button class = "pin_plus"> profile </button>
+                <button class = "profile"> + </button>
             </div>
         </div>
     </div>
