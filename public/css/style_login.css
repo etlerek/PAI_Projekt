@@ -62,14 +62,13 @@ p{
     .container{
         background: transparent linear-gradient(180deg, #000000 0%, #CC1E25 100%) 0% 0% no-repeat padding-box;
         flex-direction: column;
-        justify-content: row;
     }
 
     *{
         font-size: 35px;
     }
 
-    .login_conainer {
+    .login_container {
         width: 80%;
         height: 40%;
     }

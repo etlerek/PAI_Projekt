@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Demo: Add custom markers in Mapbox GL JS</title>
+    <title>MAP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
@@ -13,18 +13,25 @@
       href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="public/css/style_map.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style_map.css">
   </head>
   <body>
     <div class="container">
         <div class="left_bar">
-            <img class = "logo" src="public/imgs/logo3.svg">
+            <img class = "logo" src="/public/imgs/logo3.svg">
             <input name = "search" type="text" placeholder="wyszukaj miasto">
             <button class = "best_places">najwyżej oceniane > </button>
             <button class = "find_route">wyznacz trasę > </button>
             <p> Aktywne filtry </p>
             <div class = "filters">
-
+                <button><div class = "color"></div>zabytek</button>
+                <button>kultura</button>
+                <button>rekreacja</button>
+                <button>sztuka</button>
+                <button>romantyczne</button>
+                <button>jedzenie</button>
+                <button>pamiatki</button>
+                <button>bar</button>
             </div>
             <div class = "bottom_buttons">
                 <button class = "back">back</button>
@@ -33,6 +40,7 @@
         </div>
         <div id="map">
             <script>
+
             mapboxgl.accessToken = 'pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYmwzbDg2cWpvMzFxdzhnenVhbzVlIn0.un-kVFvpWtxiliFoYQ5p6w';
 
             const geojson = {
@@ -64,8 +72,8 @@
             };
 
             const map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/light-v10',
+                container: 'map.php',
+                style: 'mapbox://styles/paulsnakes/ck4ezdhmj0yit1cphc6a3m3ld',
                 center: [-96, 37.8],
                 zoom: 3
             });
@@ -89,8 +97,8 @@
             }
             </script>
             <div class = "map_buttons">
-                <button class = "pin_plus"> profile </button> 
-                <button class = "profile"> + </button> 
+                <button class = "pin_plus"> profile </button>
+                <button class = "profile"> + </button>
             </div>
         </div>
     </div>

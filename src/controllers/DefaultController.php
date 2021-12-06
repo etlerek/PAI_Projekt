@@ -4,7 +4,7 @@ require_once 'AppController.php';
 
 class DefaultController extends AppController {
 
-    public function login() {
+    public function index() {
 
         $this -> render('login');
     }
@@ -22,9 +22,9 @@ class DefaultController extends AppController {
         $this -> render('map',);
     }
 
-    public function test() {
+    public function home() {
 
-        $this -> render('test');
+        $this -> render('home');
     }
 
 }
