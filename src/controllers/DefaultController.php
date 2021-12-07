@@ -27,4 +27,8 @@ class DefaultController extends AppController {
         $this -> render('home');
     }
 
+    public function test() {
+
+        $this -> render('test');
+    }
 }
