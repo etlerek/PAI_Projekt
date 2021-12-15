@@ -20,13 +20,13 @@
                 </div>
             </header>
             <section class="cities">
-                <div class="city_1">
-                    <img src="/public/imgs/bear-jokes-and-puns.jpg">
-                    <div class = "info">
-                        <h2>miasto</h2>
-                        <p>pinow</p>
+                <?php foreach($cities as $city): ?>
+                    <div class="city">
+                        <img src="<?= $city->getImageUrl() ?>">
+                        <h2><?= $city->getName() ?></h2>
+                        <h3>Liczba pinów: <?= $city->getPinsNumber() ?></h3>
                     </div>
-                </div>
+                <?php endforeach; ?>
             </section>
         </main>
     </div>
