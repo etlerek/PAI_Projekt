@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width:100%;
+    height: 100%;
+    background: transparent radial-gradient(closest-side at 50% 60%, #CC1E25 0%, #000000 150%, #F7FF00 600%);
+}
+
+.place{
+    position: relative;
+    text-align: left;
+    color:white;
+}
+
+.name{
+    top: 0px;
+    font: normal normal normal 30px Segoe UI;
+    position: absolute;
+    width: 80%;
+}
+
+.adres{
+    position: absolute;
+    width: 50%;
+    left: auto;
+}
+
+.score{
+    position: absolute;
+    right:20%;
+}
+
+section {
+    width: 1000%;
+    height: 50vh;
+    padding: 2em;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 30px;
+    overflow: auto;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+section img{
+    width: 80%;
+    height: 90%;
+    border-radius: 10px;
+}

@@ -13,6 +13,7 @@
         href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
         rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="/public/css/style_left_bar.css">
     <link rel="stylesheet" type="text/css" href="/public/css/style_map.css">
     <style>
         body {

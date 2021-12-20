@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="public/css/style_left_bar.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style_best_places.css">
+    <title>Best Places</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left_bar">
+            <img class = "logo" src="/public/imgs/logo3.svg">
+            <input name = "search" type="text" placeholder="wyszukaj miasto">
+            <button class = "best_places">najwyżej oceniane > </button>
+            <button class = "find_route">wyznacz trasę > </button>
+            <p> Aktywne filtry </p>
+            <div class = "filters">
+                <button><div class = "color"></div>zabytek</button>
+                <button>kultura</button>
+                <button>rekreacja</button>
+                <button>sztuka</button>
+                <button>romantyczne</button>
+                <button>jedzenie</button>
+                <button>pamiatki</button>
+                <button>bar</button>
+            </div>
+            <div class = "bottom_buttons">
+                <button class = "back">back</button>
+                <button class = "options">options</button>
+            </div>
+        </div>
+        <section class="places">
+            <?php foreach($places as $place): ?>
+                <div class="place">
+                    <img src="<?= $place->getImageUrl() ?>">
+                    <div class="name"><?= $place->getName() ?></div>
+                    <div class="adres"><?= $place->getAdres()?></div>
+                    <div class="score">Ocena: <?= $place->getScore()?></div>
+                </div>
+            <?php endforeach; ?>
+        </section>
+    </div>
+
+</body>
+
+</html>
