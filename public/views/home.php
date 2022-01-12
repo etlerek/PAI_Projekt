@@ -14,7 +14,7 @@
             <header>
                 <img src="/public/imgs/logo3.svg">
                 <div class="search_bar">
-                    <input placeholder="Do jakiego miasta sie wybierasz?">
+                    <input placeholder="Wybierz miasto">
                 </div>
                 <div class="user_profile">
                     <button>profie</button>
@@ -25,7 +25,7 @@
                     <div class="city">
                         <img src="<?= $city->getImageUrl() ?>">
                         <h2><?= $city->getName() ?></h2>
-                        <h3>Liczba pinów: <?= $city->getPinsNumber() ?></h3>
+                        <p>Liczba pinów: <?= $city->getPinsNumber() ?></p>
                     </div>
                 <?php endforeach; ?>
             </section>
