@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/style_home.css">
+    <script src="https://kit.fontawesome.com/aae19cf5aa.js" crossorigin="anonymous"></script>
     <title>WHATODO</title>
 </head>
 

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <script src="https://kit.fontawesome.com/aae19cf5aa.js" crossorigin="anonymous"></script>
     <title>WHATODO: MAP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -47,9 +48,9 @@
     <div class="container">
         <div class="left_bar">
             <img class = "logo" src="/public/imgs/logo3.svg">
-            <input name = "search" type="text" placeholder="wyszukaj miasto">
-            <button class = "best_places">najwyżej oceniane > </button>
-            <button class = "find_route">wyznacz trasę > </button>
+            <input name = "search" type="text" placeholder= "wyszukaj miasto">
+            <button class = "best_places">najwyżej oceniane <i class="fas fa-chevron-right"></i> </button>
+            <button class = "find_route">wyznacz trasę <i class="fas fa-chevron-right"></i> </button>
             <p> Aktywne filtry </p>
             <div class = "filters">
                 <button><div class = "color"></div>zabytek</button>
@@ -62,8 +63,8 @@
                 <button>bar</button>
             </div>
             <div class = "bottom_buttons">
-                <button class = "back">back</button>
-                <button class = "options">options</button>
+                <button class = "back"><i class="fas fa-chevron-left fa-3x"></i></button>
+                <button class = "options"><i class="fas fa-cog fa-3x"></i></button>
             </div>
         </div>
         <div id="map"></div>
@@ -125,7 +126,7 @@
         </script>
             <div class = "map_buttons">
                 <button class = "pin_plus"> profile </button>
-                <button class = "profile"> + </button>
+                <button class = "profile"> <i class="fas fa-plus fa-3x"> </i> </button>
             </div>
     </div>
 </body>

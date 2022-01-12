@@ -29,7 +29,7 @@ class DefaultController extends AppController {
         $city1 = new City(
             'Kraków',
             100,
-            'https://images.unsplash.com/photo-1633113088092-3460c3c9b13f?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80'
+            'https://www.shutterstock.com/pl/image-photo/aerial-istanbul-winter-panorama-galata-tower-1929449054'
         );
 
         $city2 = new City(
@@ -114,7 +114,7 @@ class DefaultController extends AppController {
             "Super fajny punkt widokowy",
             'Kraków, a poza tym to bardzo długia adres to jest',
             "fajne miejsce",
-            'https://images.unsplash.com/photo-1633113088092-3460c3c9b13f?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80',
+            'https://unsplash.com/photos/Nyvq2juw4_o',
             4.5,
             "widokowe"
         );
@@ -144,8 +144,41 @@ class DefaultController extends AppController {
         $this -> render('best_places', ['places' => [$place1, $place2, $place3, $place4, $place5, $place6]]);
     }
 
-    public function test() {
+    public function profile() {
+        $place1 = new Place(
+            1,
+            54.0,
+            20.0,
+            "Zakrzówek",
+            'Kraków',
+            "fajne miejsce",
+            'https://images.unsplash.com/photo-1633113088092-3460c3c9b13f?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80',
+            4.5,
+            "widokowe"
+        );
+        $place2 = new Place(
+            1,
+            54.0,
+            20.0,
+            "Wawel",
+            'Kraków',
+            "fajne miejsce",
+            'https://images.unsplash.com/photo-1633113088092-3460c3c9b13f?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80',
+            4.5,
+            "widokowe"
+        );
 
-        $this -> render('test');
+        $place3 = new Place(
+            1,
+            54.0,
+            20.0,
+            "Kościół Mariacki",
+            'Kraków',
+            "fajne miejsce",
+            'https://images.unsplash.com/photo-1633113088092-3460c3c9b13f?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80',
+            4.5,
+            "widokowe"
+        );
+        $this -> render('profile', ['places' => [$place1, $place2, $place3]]);
     }
 }
