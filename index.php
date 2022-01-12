@@ -9,7 +9,7 @@ Router::get('', 'DefaultController');
 Router::get('map', 'DefaultController');
 Router::get('home', 'DefaultController');
 Router::get('best_places', 'DefaultController');
-Router::get('test', 'DefaultController');
+Router::get('profile', 'DefaultController');
 Router::post('login', 'SecurityController');
 
 Router::run($path);
