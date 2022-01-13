@@ -16,33 +16,6 @@
     />
     <link rel="stylesheet" type="text/css" href="/public/css/style_left_bar.css">
     <link rel="stylesheet" type="text/css" href="/public/css/style_map.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }
-        .marker {
-            background-image: url('mapbox-icon.png');
-            background-size: cover;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .mapboxgl-popup {
-            max-width: 200px;
-        }
-        .mapboxgl-popup-content {
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -128,6 +101,7 @@
                 <button class = "pin_plus"> profile </button>
                 <button class = "profile"> <i class="fas fa-plus fa-3x"> </i> </button>
             </div>
+        <button class = "more"> <i class="fas fa-sliders-h fa-3x"></i> </button>
     </div>
 </body>
 </html>

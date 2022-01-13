@@ -29,7 +29,7 @@ class DefaultController extends AppController {
         $city1 = new City(
             'Kraków',
             100,
-            'https://www.shutterstock.com/pl/image-photo/aerial-istanbul-winter-panorama-galata-tower-1929449054'
+            'https://images.unsplash.com/photo-1633113088092-3460c3c9b13f?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80'
         );
 
         $city2 = new City(

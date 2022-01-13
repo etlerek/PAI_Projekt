@@ -28,8 +28,8 @@
                 <button>bar</button>
             </div>
             <div class = "bottom_buttons">
-                <button class = "back">back</button>
-                <button class = "options">options</button>
+                <button class = "back"><i class="fas fa-chevron-left fa-3x"></i></button>
+                <button class = "options"><i class="fas fa-cog fa-3x"></i></button>
             </div>
         </div>
         <section class="places">
