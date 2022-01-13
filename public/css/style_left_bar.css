@@ -54,6 +54,10 @@ button.find_route{
 
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 p{
     align-self: center;
     font: normal normal normal 25px/33px HP Simplified Hans;
@@ -106,10 +110,32 @@ p{
     align-self: center;
 }
 
+.bottom_buttons button:hover {
+    cursor: pointer;
+    background: #CC1E25;
+}
+
 .bottom_buttons button{
     width: 100px;
     height: 100px;
     margin: 1em;
-    border: 10px solid #CC1E25;
+    border: 5px solid #CC1E25;
     border-radius: 50px;
+}
+
+@media only screen and (max-device-width: 800px) {
+    .left_bar{
+        /*TODO: to trzeba zmieniac na unset w js*/
+        display: none;
+        width: 280px;
+        height: 100vh;
+    }
+
+    .bottom_buttons button{
+        width: 80px;
+        height: 80px;
+        margin: 1em;
+        border: 10px solid #CC1E25;
+        border-radius: 50px;
+    }
 }
