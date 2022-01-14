@@ -24,7 +24,7 @@
 				<input name = "email" type="text" placeholder="email">
 				<input name = "password" type="password" placeholder="password">
 				<button class="button-1" type="submit">login</button>
-				<button class="button-2">register</button>
+				<button class="button-2" type="button">register</button>
 			</form>
 		</div>
     </div>

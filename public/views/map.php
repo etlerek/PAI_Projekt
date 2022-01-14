@@ -42,7 +42,7 @@
         </div>
         <div id="map"></div>
             <script>
-            mapboxgl.accessToken = 'pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYmwzbDg2cWpvMzFxdzhnenVhbzVlIn0.un-kVFvpWtxiliFoYQ5p6w';
+            mapboxgl.accessToken = 'pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYm82aWcwY3FwMm91Z3RwNmpsZnRlIn0.JG6BWrbAXH-2dPS7AdKZNA';
 
             const geojson = {
                 'type': 'FeatureCollection',
@@ -75,8 +75,8 @@
             const map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/light-v10',
-                center: [-96, 37.8],
-                zoom: 3
+                center: [19.9, 50.07],
+                zoom: 13
             });
 
             // add markers to map
