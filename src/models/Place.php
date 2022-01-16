@@ -14,17 +14,13 @@ class Place
 
 
 
-    public function __construct(int $id, float $x, float $y, string $name, string $adres, string $descryption, string $imageUrl, float $score, string $category)
+    public function __construct(float $x, float $y, string $name, string $descryption, string $imageUrl)
     {
-        $this->id = $id;
         $this->x = $x;
         $this->y = $y;
         $this->name = $name;
-        $this->adres = $adres;
         $this->descryption = $descryption;
         $this->imageUrl = $imageUrl;
-        $this->score = $score;
-        $this->category = $category;
     }
 
 
