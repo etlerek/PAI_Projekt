@@ -43,35 +43,6 @@
         <div id="map"></div>
             <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYm82aWcwY3FwMm91Z3RwNmpsZnRlIn0.JG6BWrbAXH-2dPS7AdKZNA';
-
-            const geojson = {
-                'type': 'FeatureCollection',
-                'features': [
-                    {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-77.032, 38.913]
-                        },
-                        'properties': {
-                            'title': 'Mapbox',
-                            'description': 'Washington, D.C.'
-                        }
-                    },
-                    {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-122.414, 37.776]
-                        },
-                        'properties': {
-                            'title': 'Mapbox',
-                            'description': 'San Francisco, California'
-                        }
-                    }
-                ]
-            };
-
             const map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/light-v10',
@@ -100,8 +71,27 @@
             <div class = "map_buttons">
                 <button class = "pin_plus"> profile </button>
                 <button class = "profile"> <i class="fas fa-plus fa-3x"> </i> </button>
+                <form action = "map" method="POST" enctype="multipart/form-data">
+                    <?php
+                    if(isset($messages)){
+                        foreach($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
+                    <input name = "x" type="text" placeholder="x">
+                    <input name = "y" type="text" placeholder="y">
+                    <input name = "title" type="text" placeholder="tytuł">
+                    <textarea name = "descryption" rows = "5" placeholder="opis"></textarea>
+                    <input name = "file" type="file">
+
+                    <button class="button-1" type="submit">zatwierdz</button>
+                    <button class="button-1" type="button">wstecz</button>
+                </form>
             </div>
         <button class = "more"> <i class="fas fa-sliders-h fa-3x"></i> </button>
     </div>
+
+
 </body>
 </html>

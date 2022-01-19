@@ -76,6 +76,26 @@ font-family: 'Open Sans', sans-serif;
     margin: 1em;
 }
 
+input{
+    pointer-events: all;
+}
+textarea{
+    pointer-events: all;
+}
+
+form{
+    position:absolute;
+    display: unset;
+    width:40vh;
+    bottom: 0;
+    z-index: 1;
+    background: transparent linear-gradient(180deg, #352626 0%, #D3121AF0 42%, #C51017 63%, #421D1D 100%) 0% 0% no-repeat padding-box;
+}
+
+form button{
+    justify-content: space-between;
+}
+
 @media only screen and (max-device-width: 800px) {
     .map_buttons button {
         width: 80px;
