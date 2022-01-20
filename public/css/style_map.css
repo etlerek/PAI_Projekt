@@ -79,6 +79,7 @@ font-family: 'Open Sans', sans-serif;
 input{
     pointer-events: all;
 }
+
 textarea{
     pointer-events: all;
 }

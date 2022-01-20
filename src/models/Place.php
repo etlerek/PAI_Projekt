@@ -7,19 +7,20 @@ class Place
     private float $y;
     private string $name;
     private string $adres;
-    private string $descryption;
+    private string $description;
     private string $imageUrl;
     private float $score;
     private string $category;
 
 
 
-    public function __construct(float $x, float $y, string $name, string $descryption, string $imageUrl)
+    public function __construct(float $x, float $y, string $name, string $description, string $address, string $imageUrl)
     {
         $this->x = $x;
         $this->y = $y;
         $this->name = $name;
-        $this->descryption = $descryption;
+        $this->description = $description;
+        $this->adres = $address;
         $this->imageUrl = $imageUrl;
     }
 
@@ -54,14 +55,14 @@ class Place
         $this->y = $y;
     }
 
-    public function getDescryption(): string
+    public function getDescription(): string
     {
-        return $this->descryption;
+        return $this->description;
     }
 
-    public function setDescryption(string $descryption): void
+    public function setDescription(string $description): void
     {
-        $this->descryption = $descryption;
+        $this->description = $description;
     }
 
     public function getScore(): float

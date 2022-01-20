@@ -35,10 +35,10 @@
         <section class="places">
             <?php foreach($places as $place): ?>
                 <div class="place">
-                    <img src="<?= $place->getImageUrl() ?>">
+                    <img src="public/uploads/<?= $place->getImageUrl() ?>">
                     <div class="name"><?= $place->getName() ?></div>
                     <div class="adres"><?= $place->getAdres()?></div>
-                    <div class="score">Ocena: <?= $place->getScore()?></div>
+<!--                    <div class="score">Ocena: --><?//= $place->getScore()?><!--</div>-->
                 </div>
             <?php endforeach; ?>
         </section>

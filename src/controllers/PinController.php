@@ -14,6 +14,14 @@ class PinController extends AppController
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
+    private $pinRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->pinRepository = new PinRepository();
+    }
+
     public function map() {
 
         //TODO: read data from database
@@ -29,10 +37,14 @@ class PinController extends AppController
                 floatval($_POST['x']),
                 floatval($_POST['y']),
                 $_POST['title'],
-                'opis na sztywnitko wpisany',
-//                $_POST['description'],
-                'https://images.unsplash.com/photo-1633113088092-3460c3c9b13f?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80');
-            return $this -> render('best_places', ['places' => [$place, $place]]);
+                $_POST['description'],
+                $_POST['address'],
+                $_FILES['file']['name']
+            );
+
+            $this->pinRepository->addPin($place);
+
+            return $this -> render('best_places', ['places' => [$place]]);
         }
 
         $this -> render('map');

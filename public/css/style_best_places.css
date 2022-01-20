@@ -39,7 +39,7 @@ section {
     padding: 2em;
     overflow: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 30px;
     overflow: auto;
     padding-left: 2em;
