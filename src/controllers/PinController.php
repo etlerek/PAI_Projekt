@@ -33,7 +33,7 @@ class PinController extends AppController
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
-            $place = new Place(
+            $pin = new Place(
                 floatval($_POST['x']),
                 floatval($_POST['y']),
                 $_POST['title'],
@@ -42,19 +42,19 @@ class PinController extends AppController
                 $_FILES['file']['name']
             );
 
-            $this->pinRepository->addPin($place);
+            $this->pinRepository->addPin($pin);
 
-            return $this -> render('best_places', ['places' => [$place]]);
+            return $this -> render('best_places', ['pins' => $this->pinRepository -> getPins()]);
         }
 
         $this -> render('map');
     }
 
-//    public function addPin()
-//    {
-//
-//
-//    }
+    public function best_places() {
+
+        $pins = $this -> pinRepository -> getPins();
+        $this -> render('best_places', ['pins' => $pins]);
+    }
 
 
     private function validate(array $file): bool

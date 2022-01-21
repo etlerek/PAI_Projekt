@@ -46,4 +46,26 @@ class PinRepository extends Repository {
         ]);
 
     }
+
+    public function getPins(): array{
+        $result = [];
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM pins
+        ');
+        $stmt -> execute();
+        $pins = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach($pins as $pin){
+            $result[] = new Place(
+                $pin['x'],
+                $pin['y'],
+                $pin['name'],
+                $pin['descryption'],
+                'byleco', //TODO
+                $pin['img']
+            );
+        }
+
+        return $result;
+    }
 }

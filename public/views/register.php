@@ -10,9 +10,9 @@
     <div class="container">
         <img class = "logo" src="public/imgs/logo1.svg">
 		<div class = "login_container">
-			<form action = "login" method="POST">
+			<form action = "register" method="POST">
                 <div class="messages">
-                    <p>Zaloguj się! </p>
+                    <p>Zarejestruj się! </p>
                     <?php
                     if(isset($messages)){
                         foreach($messages as $message) {
@@ -21,10 +21,13 @@
                     }
                     ?>
                 </div>
-				<input name = "email" type="text" placeholder="email">
-				<input name = "password" type="password" placeholder="password">
-				<button class="button-1" name = 'login' type="submit">login</button>
-				<button class="button-2" name = 'register' type="submit">register</button>
+                <input name="email" type="text" placeholder="email">
+                <input name="password" type="password" placeholder="password">
+                <input name="confirmedPassword" type="password" placeholder="confirm password">
+                <input name="nickname" type="text" placeholder="nickname">
+                <input name="name" type="text" placeholder="name">
+                <input name="surname" type="text" placeholder="surname">
+				<button class="button-2" type="submit">register</button>
 			</form>
 		</div>
     </div>
