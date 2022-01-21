@@ -10,6 +10,10 @@
         rel="stylesheet"
     />
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <script src="public/js/functions.js" crossorigin="anonymous" defer></script>
+    <script src="public/js/map.js" crossorigin="anonymous" defer></script>
+
+
     <link
         href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
         rel="stylesheet"
@@ -41,37 +45,10 @@
             </div>
         </div>
         <div id="map"></div>
-            <script>
-            mapboxgl.accessToken = 'pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYm82aWcwY3FwMm91Z3RwNmpsZnRlIn0.JG6BWrbAXH-2dPS7AdKZNA';
-            const map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/light-v10',
-                center: [19.9, 50.07],
-                zoom: 13
-            });
-
-            // add markers to map
-            for (const feature of geojson.features) {
-                // create a HTML element for each feature
-                const el = document.createElement('div');
-                el.className = 'marker';
-
-                // make a marker for each feature and add it to the map
-                new mapboxgl.Marker(el)
-                    .setLngLat(feature.geometry.coordinates)
-                    .setPopup(
-                        new mapboxgl.Popup({ offset: 25 }) // add popups
-                            .setHTML(
-                                `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
-                            )
-                    )
-                    .addTo(map);
-            }
-        </script>
             <div class = "map_buttons">
-                <button class = "pin_plus"> profile </button>
-                <button class = "profile"> <i class="fas fa-plus fa-3x"> </i> </button>
-                <form action = "map" method="POST" enctype="multipart/form-data">
+                <button class = "profile" > profile </button>
+                <button class = "pin_plus" type="button" onclick="showPinPlus()"> <i class="fas fa-plus fa-3x"> </i> </button>
+                <form id = "addPinForm" action = "map" method="POST" enctype="multipart/form-data">
                     <?php
                     if(isset($messages)){
                         foreach($messages as $message) {
@@ -87,7 +64,7 @@
                     <input name = "file" type="file">
 
                     <button class="button-1" type="submit">zatwierdz</button>
-                    <button class="button-1" type="button">wstecz</button>
+                    <button class="back" type="button" onclick="showPinPlus()">wstecz</button>
                 </form>
             </div>
         <button class = "more"> <i class="fas fa-sliders-h fa-3x"></i> </button>

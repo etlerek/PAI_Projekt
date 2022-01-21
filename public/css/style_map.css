@@ -86,7 +86,7 @@ textarea{
 
 form{
     position:absolute;
-    display: unset;
+    display: none;
     width:40vh;
     bottom: 0;
     z-index: 1;
