@@ -33,12 +33,12 @@
             </div>
         </div>
         <section class="places">
-            <?php foreach($places as $place): ?>
+            <?php foreach($pins as $pin): ?>
                 <div class="place">
-                    <img src="<?= $place->getImageUrl() ?>">
-                    <div class="name"><?= $place->getName() ?></div>
-                    <div class="adres"><?= $place->getAdres()?></div>
-                    <div class="score">Ocena: <?= $place->getScore()?></div>
+                    <img src="public/uploads/<?= $pin->getImageUrl() ?>">
+                    <div class="name"><?= $pin->getName() ?></div>
+                    <div class="adres"><?= $pin->getAdres()?></div>
+<!--                    <div class="score">Ocena: --><?//= $place->getScore()?><!--</div>-->
                 </div>
             <?php endforeach; ?>
         </section>

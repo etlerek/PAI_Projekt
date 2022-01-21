@@ -26,14 +26,14 @@
             <button class = "find_route">wyznacz trasę <i class="fas fa-chevron-right"></i> </button>
             <p> Aktywne filtry </p>
             <div class = "filters">
-                <button><div class = "color"></div>zabytek</button>
-                <button>kultura</button>
-                <button>rekreacja</button>
-                <button>sztuka</button>
-                <button>romantyczne</button>
-                <button>jedzenie</button>
-                <button>pamiatki</button>
-                <button>bar</button>
+                <button><div class = "color1"></div>zabytek</button>
+                <button><div class = "color2">kultura</button>
+                <button><div class = "color3">rekreacja</button>
+                <button><div class = "color4">sztuka</button>
+                <button><div class = "color5">romantyczne</button>
+                <button><div class = "color6">jedzenie</button>
+                <button><div class = "color7">pamiatki</button>
+                <button><div class = "color8">bar</button>
             </div>
             <div class = "bottom_buttons">
                 <button class = "back"><i class="fas fa-chevron-left fa-3x"></i></button>
@@ -43,35 +43,6 @@
         <div id="map"></div>
             <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYm82aWcwY3FwMm91Z3RwNmpsZnRlIn0.JG6BWrbAXH-2dPS7AdKZNA';
-
-            const geojson = {
-                'type': 'FeatureCollection',
-                'features': [
-                    {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-77.032, 38.913]
-                        },
-                        'properties': {
-                            'title': 'Mapbox',
-                            'description': 'Washington, D.C.'
-                        }
-                    },
-                    {
-                        'type': 'Feature',
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-122.414, 37.776]
-                        },
-                        'properties': {
-                            'title': 'Mapbox',
-                            'description': 'San Francisco, California'
-                        }
-                    }
-                ]
-            };
-
             const map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/light-v10',
@@ -100,8 +71,28 @@
             <div class = "map_buttons">
                 <button class = "pin_plus"> profile </button>
                 <button class = "profile"> <i class="fas fa-plus fa-3x"> </i> </button>
+                <form action = "map" method="POST" enctype="multipart/form-data">
+                    <?php
+                    if(isset($messages)){
+                        foreach($messages as $message) {
+                            echo $message;
+                        }
+                    }
+                    ?>
+                    <input name = "x" type="text" placeholder="x">
+                    <input name = "y" type="text" placeholder="y">
+                    <input name = "title" type="text" placeholder="tytuł">
+                    <input name = "address" type="text" placeholder="adres">
+                    <textarea name = "description" rows = "5" cols = "35" placeholder="opis"></textarea>
+                    <input name = "file" type="file">
+
+                    <button class="button-1" type="submit">zatwierdz</button>
+                    <button class="button-1" type="button">wstecz</button>
+                </form>
             </div>
         <button class = "more"> <i class="fas fa-sliders-h fa-3x"></i> </button>
     </div>
+
+
 </body>
 </html>
