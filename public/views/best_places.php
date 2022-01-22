@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style_left_bar.css">
     <link rel="stylesheet" type="text/css" href="public/css/style_best_places.css">
     <script src="https://kit.fontawesome.com/aae19cf5aa.js" crossorigin="anonymous"></script>
+    <script src="./public/js/search.js" crossorigin="anonymous" defer></script>
     <title>Best Places</title>
 </head>
 

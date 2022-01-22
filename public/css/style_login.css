@@ -61,6 +61,11 @@ p{
     color: #707070;
 }
 
+.no-valid{
+    border: 1px solid red;
+    outline: none;
+}
+
 @media only screen and (max-device-width: 600px){
 
     .container{

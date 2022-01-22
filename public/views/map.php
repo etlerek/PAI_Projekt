@@ -10,8 +10,8 @@
         rel="stylesheet"
     />
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-    <script src="public/js/functions.js" crossorigin="anonymous" defer></script>
-    <script src="public/js/map.js" crossorigin="anonymous" defer></script>
+    <script src="./public/js/buttonsHandler.js" crossorigin="anonymous" defer></script>
+    <script type = text/javascript src="./public/js/map.js" crossorigin="anonymous" defer></script>
 
 
     <link

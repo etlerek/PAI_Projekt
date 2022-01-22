@@ -56,6 +56,10 @@ class PinController extends AppController
         $this -> render('best_places', ['pins' => $pins]);
     }
 
+    public function search(){
+
+    }
+
 
     private function validate(array $file): bool
     {

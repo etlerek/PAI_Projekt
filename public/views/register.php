@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_login.css">
+    <script type = text/javascript src="./public/js/script.js" crossorigin="anonymous" defer></script>
     <title>Login Page</title>
 </head>
 
