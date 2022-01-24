@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="/public/css/style_profile.css">
+    <script src="./public/js/buttonsHandler.js" crossorigin="anonymous" defer></script>
     <title>PROFILE</title>
 </head>
 

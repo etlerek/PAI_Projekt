@@ -13,5 +13,6 @@ Router::get('profile', 'DefaultController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::post('map', 'PinController');
+Router::post('search', 'PinController');
 
 Router::run($path);

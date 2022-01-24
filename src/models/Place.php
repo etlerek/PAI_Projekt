@@ -6,7 +6,7 @@ class Place
     private float $x;
     private float $y;
     private string $name;
-    private string $adres;
+    private string $address;
     private string $description;
     private string $imageUrl;
     private float $score;
@@ -20,7 +20,7 @@ class Place
         $this->y = $y;
         $this->name = $name;
         $this->description = $description;
-        $this->adres = $address;
+        $this->address = $address;
         $this->imageUrl = $imageUrl;
     }
 
@@ -86,14 +86,14 @@ class Place
         $this->name = $name;
     }
 
-    public function getAdres(): string
+    public function getAddress(): string
     {
-        return $this->adres;
+        return $this->address;
     }
 
-    public function setAdres(string $adres): void
+    public function setAddress(string $address): void
     {
-        $this->city = $adres;
+        $this->address = $address;
     }
 
     public function getImageUrl(): string

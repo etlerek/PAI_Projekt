@@ -10,8 +10,8 @@
         rel="stylesheet"
     />
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
-    <script src="public/js/functions.js" crossorigin="anonymous" defer></script>
-    <script src="public/js/map.js" crossorigin="anonymous" defer></script>
+    <script src="./public/js/buttonsHandler.js" crossorigin="anonymous" defer></script>
+    <script type = text/javascript src="./public/js/map.js" crossorigin="anonymous" defer></script>
 
 
     <link
@@ -62,9 +62,11 @@
                     <input name = "address" type="text" placeholder="adres">
                     <textarea name = "description" rows = "5" cols = "35" placeholder="opis"></textarea>
                     <input name = "file" type="file">
+                    <div class = add_pin_buttons>
+                        <button class="button-1" type="submit"><i class="fas fa-check fa-3x"></i></button>
+                        <button class="back" type="button" onclick="showPinPlus()"><i class="fas fa-times fa-3x"></i></button>
+                    </div>
 
-                    <button class="button-1" type="submit">zatwierdz</button>
-                    <button class="back" type="button" onclick="showPinPlus()">wstecz</button>
                 </form>
             </div>
         <button class = "more"> <i class="fas fa-sliders-h fa-3x"></i> </button>
