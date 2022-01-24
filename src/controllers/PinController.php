@@ -10,7 +10,7 @@ class PinController extends AppController
 {
 
     private $messages = [];
-    const MAX_FILE_SIZE = 1024*1024;
+    const MAX_FILE_SIZE = 1024*1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
@@ -57,7 +57,17 @@ class PinController extends AppController
     }
 
     public function search(){
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+            $decoded = json_decode($content, true);
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->pinRepository->getByName($decoded['search']));
+        }
     }
 
 

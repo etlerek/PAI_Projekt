@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style_left_bar.css">
     <link rel="stylesheet" type="text/css" href="public/css/style_best_places.css">
     <script src="https://kit.fontawesome.com/aae19cf5aa.js" crossorigin="anonymous"></script>
-    <script src="./public/js/search.js" crossorigin="anonymous" defer></script>
+    <script src="./public/js/search.js" defer></script>
     <title>Best Places</title>
 </head>
 
@@ -35,11 +35,10 @@
         </div>
         <section class="places">
             <?php foreach($pins as $pin): ?>
-                <div class="place">
+                <div id = "place" class="place">
                     <img src="public/uploads/<?= $pin->getImageUrl() ?>">
                     <div class="name"><?= $pin->getName() ?></div>
-                    <div class="adres"><?= $pin->getAdres()?></div>
-<!--                    <div class="score">Ocena: --><?//= $place->getScore()?><!--</div>-->
+                    <div class="address"><?= $pin->getAddress()?></div>
                 </div>
             <?php endforeach; ?>
         </section>
@@ -47,4 +46,11 @@
 
 </body>
 
+<template id = "pin-template">
+    <div  id = "place" class="place">
+        <img src="">
+        <div class="name">name</div>
+        <div class="address">address</div>
+    </div>
+</template>
 </html>

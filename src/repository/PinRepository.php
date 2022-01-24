@@ -72,7 +72,7 @@ class PinRepository extends Repository {
     public function getByName(string $searchSting){
         $searchSting = '%'.strtolower($searchSting).'%';
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM pins WHERE lower(title) LIKE :search
+            SELECT * FROM pins WHERE lower(name) LIKE :search
         ');
 
         $stmt -> bindParam(':search', $searchSting, PDO::PARAM_STR);
