@@ -1,4 +1,4 @@
-const search = document.querySelector('input[placeholder="wyszukaj miasto"]');
+const search = document.querySelector('input[placeholder="wyszukaj miejsce"]');
 const pinsContainer = document.querySelector(".places");
 
 search.addEventListener("keyup", function (event) {

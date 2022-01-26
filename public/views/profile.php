@@ -12,7 +12,9 @@
 <div class="container">
     <main>
         <header>
-            <img src="/public/imgs/logo3.svg">
+            <a href="http://localhost:8080/home">
+                <img class = "logo" src="/public/imgs/logo3.svg">
+            </a>
             <div class="home_button">
                 <button>HOME</button>
                 <button>WYLOGUJ SIĘ</button>
