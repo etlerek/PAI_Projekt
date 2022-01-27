@@ -72,6 +72,7 @@
                 <button class = "options" type="button"><i class="fas fa-cog fa-3x"></i></button>
             </div>
         </div>
+        <pre id="info"></pre>
         <div id="map"></div>
             <div class = "map_buttons">
                 <button class = "profile" > profile </button>

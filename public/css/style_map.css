@@ -13,7 +13,7 @@ body {
 }
 
 .marker {
-    background-image: url("https://as1.ftcdn.net/v2/jpg/02/06/16/58/500_F_206165896_lVGZ6RzucXCprcm61BAXLPRbTxXwY3K9.jpg");
+    background-image: url("../imgs/marker-stroked.svg");
     background-size: cover;
     width: 50px;
     height: 50px;
@@ -28,6 +28,25 @@ body {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
 }
+
+#info {
+    display: table;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: 0px auto;
+    word-wrap: anywhere;
+    white-space: pre-wrap;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #222;
+    background: #fff;
+    z-index: 01;
+}
+
 
 .container{
     width: 100vw;

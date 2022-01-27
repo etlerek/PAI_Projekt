@@ -25,10 +25,9 @@ function displayPlaces(places){
         // create a HTML element for each feature
         const el = document.createElement('div');
         el.className = 'marker';
-
         // make a marker for each feature and add it to the map
         new mapboxgl.Marker(el)
-            .setLngLat(feature.coordinates.point)
+            .setLngLat(feature.coordinates)
             .setPopup(
                 new mapboxgl.Popup({ offset: 25 }) // add popups
                     .setHTML(
@@ -38,3 +37,16 @@ function displayPlaces(places){
             .addTo(map);
     }
 }
+
+//test pobierania coordów
+map.on('click', (e) => {
+    document.getElementById('info').innerHTML =
+// `e.point` is the x, y coordinates of the `mousemove` event
+// relative to the top-left corner of the map.
+        JSON.stringify(e.point) +
+        '<br />' +
+        // `e.lngLat` is the longitude, latitude geographical position of the event.
+        JSON.stringify(e.lngLat.wrap());
+    console.log(JSON.stringify(e.lngLat.wrap()));
+});
+
