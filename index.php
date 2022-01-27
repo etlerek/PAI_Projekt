@@ -14,5 +14,6 @@ Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::post('map', 'PinController');
 Router::post('search', 'PinController');
+Router::post('places', 'PinController');
 
 Router::run($path);

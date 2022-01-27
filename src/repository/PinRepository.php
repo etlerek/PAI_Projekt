@@ -10,20 +10,17 @@ class PinRepository extends Repository {
         ");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
-        //print_r($stmt);
 
         $pin = $stmt->fetch(PDO::FETCH_ASSOC);
-        //print_r($user);
         if ($pin == false) {
             return null;
         }
 
         return new Place(
-            $pin['x'],
-            $pin['y'],
             $pin['name'],
             $pin['descryption'],
-            $pin['img']
+            $pin['img'],
+            $pin['coordinates']
         );
     }
 
@@ -38,11 +35,10 @@ class PinRepository extends Repository {
         $id_from_user = 4;
         $stmt->execute([
             $pin -> getName(),
-            $pin -> getX(),
-            $pin -> getY(),
             $pin -> getDescription(),
             $id_from_user,
             $pin -> getImageUrl(),
+            $pin -> getCoordinates()
         ]);
 
     }
@@ -57,16 +53,26 @@ class PinRepository extends Repository {
 
         foreach($pins as $pin){
             $result[] = new Place(
-                $pin['x'],
-                $pin['y'],
+                $pin['coordinates'],
                 $pin['name'],
                 $pin['descryption'],
                 'byleco', //TODO
                 $pin['img']
+
             );
         }
 
         return $result;
+    }
+
+    public function getPinsToMap(): array{
+        $result = [];
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM pins
+        ');
+        $stmt -> execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getByName(string $searchSting){

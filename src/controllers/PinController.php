@@ -56,6 +56,18 @@ class PinController extends AppController
         $this -> render('best_places', ['pins' => $pins]);
     }
 
+    public function places(){
+        header('Content-type: application/json');
+        http_response_code(200);
+
+        echo json_encode($this->pinRepository->getPinsToMap());
+    }
+
+    public function goToBest_places(){
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/best_places");
+    }
+
     public function search(){
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 

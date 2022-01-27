@@ -18,14 +18,20 @@ body{
 
 .name{
     top: 0px;
-    font: normal normal normal 30px Segoe UI;
+    font: normal normal normal 35px Segoe UI;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
     position: absolute;
     width: 80%;
+
 }
 
 .adres{
     position: absolute;
     width: 50%;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
     left: auto;
 }
 

@@ -24,26 +24,55 @@
 <body>
     <div class="container">
         <div class="left_bar">
+            <a href="http://localhost:8080/home">
             <img class = "logo" src="/public/imgs/logo3.svg">
+            </a>
             <input name = "search" type="text" placeholder= "wyszukaj miasto">
-            <button class = "best_places">najwyżej oceniane <i class="fas fa-chevron-right"></i> </button>
-            <button class = "find_route">wyznacz trasę <i class="fas fa-chevron-right"></i> </button>
+            <form id="button_form" action = "best_places" method="POST">
+                <button class = "best_places">najwyżej oceniane </i> </button>
+            </form>
+<!--            <button class = "find_route">wyznacz trasę <i class="fas fa-chevron-right"></i> </button>-->
             <p> Aktywne filtry </p>
             <div class = "filters">
-                <button><div class = "color1"></div>zabytek</button>
-                <button><div class = "color2">kultura</button>
-                <button><div class = "color3">rekreacja</button>
-                <button><div class = "color4">sztuka</button>
-                <button><div class = "color5">romantyczne</button>
-                <button><div class = "color6">jedzenie</button>
-                <button><div class = "color7">pamiatki</button>
-                <button><div class = "color8">bar</button>
+                <div class = "checkbox">
+                    <input type="checkbox" id="zabytek" value="coding">
+                    <span class="checkmark">zabytek</span>
+                </div>
+                <div class = "checkbox">
+                    <input type="checkbox" id="kultura" value="kultura">
+                    <span class="checkmark">kultura</span>
+                </div>
+                <div  class = "checkbox">
+                    <input type="checkbox" id="rekreacja" value="rekreacja">
+                    <span class="checkmark">rekreacja</span>
+                </div>
+                <div  class = "checkbox">
+                    <input type="checkbox" id="sztuka" value="sztuka">
+                    <span class="checkmark">sztuka</span>
+                </div>
+                <div  class = "checkbox">
+                    <input type="checkbox" id="romantyczne" value="romantyczne">
+                    <span class="checkmark">romantyczne</span>
+                </div>
+                <div  class = "checkbox">
+                    <input type="checkbox" id="jedzenie" value="jedzenie">
+                    <span class="checkmark">jedzenie</span>
+                </div>
+                <div  class = "checkbox">
+                    <input type="checkbox" id="pamiatki" value="pamiatki">
+                    <span class="checkmark">pamiatki</span>
+                </div>
+                <div  class = "checkbox">
+                    <input type="checkbox" id="bar" value="bar">
+                    <span class="checkmark">bar</span>
+                </div>
             </div>
             <div class = "bottom_buttons">
-                <button class = "back"><i class="fas fa-chevron-left fa-3x"></i></button>
-                <button class = "options"><i class="fas fa-cog fa-3x"></i></button>
+                <button class = "back" type="button"><i class="fas fa-chevron-left fa-3x"></i></button>
+                <button class = "options" type="button"><i class="fas fa-cog fa-3x"></i></button>
             </div>
         </div>
+        <pre id="info"></pre>
         <div id="map"></div>
             <div class = "map_buttons">
                 <button class = "profile" > profile </button>
