@@ -12,15 +12,16 @@ class Place
     private float $score;
     private string $category;
     private string $coordinates;
+    private string $tag;
 
-
-    public function __construct(string $coordinates, string $name, string $description, string $address, string $imageUrl)
+    public function __construct(string $coordinates, string $name, string $description, string $address, string $imageUrl, string $tag)
     {
         $this->coordinates = $coordinates;
         $this->name = $name;
         $this->description = $description;
         $this->address = $address;
         $this->imageUrl = $imageUrl;
+        $this->tag = $tag;
     }
 
 
@@ -123,6 +124,17 @@ class Place
     {
         $this->coordinates = $coordinates;
     }
+
+    public function getTag(): string
+    {
+        return $this->tag;
+    }
+
+    public function setTag(string $tag): void
+    {
+        $this->tag = $tag;
+    }
+
 
 
 }

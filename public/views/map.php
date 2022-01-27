@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/aae19cf5aa.js" crossorigin="anonymous"></script>
     <title>WHATODO: MAP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,7 +10,7 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans"
         rel="stylesheet"
     />
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js" defer></script>
     <script src="./public/js/buttonsHandler.js" crossorigin="anonymous" defer></script>
     <script type = text/javascript src="./public/js/map.js" crossorigin="anonymous" defer></script>
 
@@ -85,12 +86,12 @@
                         }
                     }
                     ?>
-                    <input name = "x" type="text" placeholder="x">
-                    <input name = "y" type="text" placeholder="y">
-                    <input name = "title" type="text" placeholder="tytuł">
-                    <input name = "address" type="text" placeholder="adres">
-                    <textarea name = "description" rows = "5" cols = "35" placeholder="opis"></textarea>
                     <input name = "file" type="file">
+                    <input id = "coordinates" name = "coordinates" type="text" placeholder="coordinates">
+                    <input id = "title" name = "title" type="text" placeholder="tytuł">
+                    <textarea id = "address" name = "address" rows = "2" type="text" placeholder="address"></textarea>
+                    <textarea name = "description" rows = "5" cols = "35" placeholder="opis"></textarea>
+                    <input name = "tag" type="text" placeholder="tag">
                     <div class = add_pin_buttons>
                         <button class="button-1" type="submit"><i class="fas fa-check fa-3x"></i></button>
                         <button class="back" type="button" onclick="showPinPlus()"><i class="fas fa-times fa-3x"></i></button>

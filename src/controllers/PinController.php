@@ -34,17 +34,18 @@ class PinController extends AppController
             );
 
             $pin = new Place(
-                floatval($_POST['x']),
-                floatval($_POST['y']),
+                $_POST['coordinates'],
                 $_POST['title'],
                 $_POST['description'],
                 $_POST['address'],
-                $_FILES['file']['name']
+                $_FILES['file']['name'],
+                $_POST['tag']
             );
 
             $this->pinRepository->addPin($pin);
 
-            return $this -> render('best_places', ['pins' => $this->pinRepository -> getPins()]);
+            //return $this -> render('best_places', ['pins' => $this->pinRepository -> getPins()]);
+            return $this -> render('map');
         }
 
         $this -> render('map');

@@ -20,7 +20,9 @@ class PinRepository extends Repository {
             $pin['name'],
             $pin['descryption'],
             $pin['img'],
-            $pin['coordinates']
+            $pin['coordinates'],
+            $pin['address'],
+            $pin['tag']
         );
     }
 
@@ -28,8 +30,8 @@ class PinRepository extends Repository {
 
         //$date = new DateTime();
         $stmt = $this->database->connect()->prepare('
-        INSERT INTO pins (name, x, y, descryption, id_from_user, img)
-        VALUES (?,?,?,?,?,?)
+        INSERT INTO pins (name, descryption, id_from_user, img, coordinates, address, tag)
+        VALUES (?,?,?,?,?,?,?)
         ');
 
         $id_from_user = 4;
@@ -38,7 +40,10 @@ class PinRepository extends Repository {
             $pin -> getDescription(),
             $id_from_user,
             $pin -> getImageUrl(),
-            $pin -> getCoordinates()
+            $pin -> getCoordinates(),
+            $pin -> getAddress(),
+            $pin -> getTag()
+
         ]);
 
     }
@@ -56,8 +61,9 @@ class PinRepository extends Repository {
                 $pin['coordinates'],
                 $pin['name'],
                 $pin['descryption'],
-                'byleco', //TODO
-                $pin['img']
+                $pin['address'],
+                $pin['img'],
+                $pin['tag']
 
             );
         }
