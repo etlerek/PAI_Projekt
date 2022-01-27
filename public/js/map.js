@@ -1,10 +1,10 @@
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYm82aWcwY3FwMm91Z3RwNmpsZnRlIn0.JG6BWrbAXH-2dPS7AdKZNA';
+
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
-    //center: [19.9, 50.07],
-    center: [-77.032, 38.913],
+    center: [19.9, 50.07],
+    //center: [-77.032, 38.913],
     zoom: 7
 });
 
@@ -38,15 +38,33 @@ function displayPlaces(places){
     }
 }
 
-//test pobierania coordów
+
 map.on('click', (e) => {
+    const data = (e.lngLat.wrap());
     document.getElementById('info').innerHTML =
-// `e.point` is the x, y coordinates of the `mousemove` event
-// relative to the top-left corner of the map.
         JSON.stringify(e.point) +
         '<br />' +
-        // `e.lngLat` is the longitude, latitude geographical position of the event.
         JSON.stringify(e.lngLat.wrap());
-    console.log(JSON.stringify(e.lngLat.wrap()));
+    document.getElementById("coordinates").value = `[${data.lng}, ${data.lat}]`;
+    mapClickFn(data);
 });
 
+function mapClickFn(coordinates) {
+    const url =
+        "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
+        coordinates.lng +
+        "," +
+        coordinates.lat +
+        ".json?access_token=" +
+        `pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYm82aWcwY3FwMm91Z3RwNmpsZnRlIn0.JG6BWrbAXH-2dPS7AdKZNA` +
+        "&types=address";
+    console.log(url);
+    $.get(url, function (data) {
+        if (data.features.length > 0) {
+            const address = data.features[0].place_name;
+            document.getElementById("address").value = address;
+        } else {
+            document.getElementById("address").value = "No address found";
+        }
+    });
+}

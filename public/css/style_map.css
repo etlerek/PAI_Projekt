@@ -103,6 +103,7 @@ textarea{
     pointer-events: all;
     align-self: center;
     text-align: center;
+    margin: 2px;
     font: normal normal bold 20px Clarendon;
     background: transparent radial-gradient(closest-side at 50% 50%, #FFFFFF 0%, #421D1D 200%) 0% 0% no-repeat padding-box;
     box-shadow: 2px 3px 99px #00000029;
