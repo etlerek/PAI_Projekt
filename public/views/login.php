@@ -23,6 +23,13 @@
                 </div>
 				<input name = "email" type="text" placeholder="email">
 				<input name = "password" type="password" placeholder="password">
+                <?php
+                session_start();
+                if(isset( $_SESSION['sess_user'])){
+//                    echo "Witaj " . $_SESSION['sess_user']. "!<br>";
+//                    echo ("<a href='logout.php'>Wyloguj</a>");
+                }
+                ?>
 				<button class="button-1" name = 'login' type="submit">login</button>
 				<button class="button-2" name = 'register' type="submit">register</button>
 			</form>

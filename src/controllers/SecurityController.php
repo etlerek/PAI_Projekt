@@ -22,6 +22,14 @@ class SecurityController extends AppController
             return $this->render('register');
         }
 
+        if (isset($_POST['logout'])) {
+            return $this ->render("login", ['messages' => [$_SESSION['name']]]);
+//            session_unset();
+//            $url = "http://$_SERVER[HTTP_HOST]";
+//            header("Location: {$url}/login");
+
+        }
+
         if (!$this->isPost()) {
             return $this->render('login');
         }
@@ -42,12 +50,21 @@ class SecurityController extends AppController
         if ($user->getPassword() !== $password) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
-
-//        return $this ->render("map");
+        session_set_cookie_params(
+            84500,
+            "http://$_SERVER[HTTP_HOST]",
+            null,
+            false,
+            false
+        );
+        session_start();
+        $_SESSION['name'] = $user -> getName();
+//        return $this ->render("login", ['messages' => [$_SESSION['name']]]);
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/map");
     }
+
 
     public function register()
     {
