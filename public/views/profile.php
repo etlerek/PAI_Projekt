@@ -17,7 +17,10 @@
             </a>
             <div class="home_button">
                 <button>HOME</button>
-                <button>WYLOGUJ SIĘ</button>
+                <form action = "login" method="POST">
+                    <button name = 'logout'>WYLOGUJ SIĘ</button>
+                </form>
+
             </div>
         </header>
         <div class = "sections" >

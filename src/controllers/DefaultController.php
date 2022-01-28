@@ -11,6 +11,11 @@ class DefaultController extends AppController {
         $this -> render('login');
     }
 
+    public function test() {
+
+        $this -> render('test');
+    }
+
     public function home() {
 
         $city1 = new City(
