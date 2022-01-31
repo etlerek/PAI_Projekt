@@ -16,9 +16,9 @@
                 <div class="search_bar">
                     <input placeholder="Wybierz miasto">
                 </div>
-                <div class="user_profile">
-                    <button>profie</button>
-                </div>
+                <form id = "profile" action = "profile" method="GET" enctype="multipart/form-data">
+                    <button class = "profile" ><i class="far fa-user fa-4x"></i></button>
+                </form>
             </header>
             <section class="cities">
                 <?php foreach($cities as $city): ?>

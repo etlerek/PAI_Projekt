@@ -120,7 +120,7 @@ textarea{
     width:40vh;
     bottom: 0;
     z-index: 1;
-    background: transparent linear-gradient(180deg, #352626 0%, #D3121AF0 42%, #C51017 63%, #421D1D 100%) 0% 0% no-repeat padding-box;
+    background: transparent radial-gradient(closest-side at 50% 60%, #6e181c 0%, #000000 200%, #F7FF00 600%);
     border-radius: 25px;
 }
 
@@ -128,6 +128,7 @@ textarea{
 form button{
     justify-content: space-between;
 }
+
 
 @media only screen and (max-device-width: 800px) {
     .map_buttons button {

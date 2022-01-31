@@ -34,7 +34,9 @@ class PinRepository extends Repository {
         VALUES (?,?,?,?,?,?,?)
         ');
 
-        $id_from_user = 4;
+        $data = Session::getInstance();
+
+        $id_from_user = $data -> id;
         $stmt->execute([
             $pin -> getName(),
             $pin -> getDescription(),
