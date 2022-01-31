@@ -23,7 +23,6 @@ class PinController extends AppController
     }
 
     public function map() {
-        session_start();
 
         if($this ->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])){
 

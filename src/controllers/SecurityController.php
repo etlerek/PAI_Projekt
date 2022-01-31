@@ -2,6 +2,7 @@
 
 require_once "AppController.php";
 require_once __DIR__."/../models/User.php";
+require_once __DIR__."/../models/Session.php";
 require_once __DIR__."/../repository/UserRepository.php";
 
 class SecurityController extends AppController
@@ -23,11 +24,9 @@ class SecurityController extends AppController
         }
 
         if (isset($_POST['logout'])) {
-            return $this ->render("login", ['messages' => [$_SESSION['name']]]);
-//            session_unset();
-//            $url = "http://$_SERVER[HTTP_HOST]";
-//            header("Location: {$url}/login");
-
+            $data = Session::getInstance();
+            $data ->destroy();
+            return $this ->render("login", ['messages' => [$data->name," ",$data->surname] ] );
         }
 
         if (!$this->isPost()) {
@@ -50,16 +49,16 @@ class SecurityController extends AppController
         if ($user->getPassword() !== $password) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
-        session_set_cookie_params(
-            84500,
-            "http://$_SERVER[HTTP_HOST]",
-            null,
-            false,
-            false
-        );
-        session_start();
-        $_SESSION['name'] = $user -> getName();
-//        return $this ->render("login", ['messages' => [$_SESSION['name']]]);
+
+        $data = Session::getInstance();
+        $data->id = $user -> getId();
+        $data->name = $user -> getName();
+        $data->surname = $user -> getSurname();
+        $data->nickname = $user -> getNickname();
+        $data->password = $user -> getPassword();
+
+        //TODO: USUN NIZEJ TEST
+//        return $this ->render("login", ['messages' => [$data->id," ",$data->name," ",$data->surname] ]);
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/map");
@@ -84,10 +83,10 @@ class SecurityController extends AppController
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
-        $user = new User($email, md5($password), $name, $surname, $nickname);
+        $user = new User(-1, $email, md5($password), $name, $surname, $nickname);
 
         $this->userRepository->addUser($user);
 
-        $this -> render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
+        $this -> render('login', ['messages' => ['Zarejestrowałeś się, możesz się teraz zalogować na konto']]);
     }
 }
