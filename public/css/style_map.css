@@ -30,7 +30,7 @@ body {
 }
 
 #info {
-    display: table;
+    display: none;
     left: 0;
     right: 0;
     position: absolute;
