@@ -4,6 +4,7 @@ require_once 'Repository.php';
 require_once __DIR__.'/../models/Place.php';
 
 class PinRepository extends Repository {
+
     public function getPin(int $id): ?Place{
         $stmt = $this->database->connect()->prepare("
             SELECT * FROM public.pins WHERE id = :id
@@ -34,7 +35,9 @@ class PinRepository extends Repository {
         VALUES (?,?,?,?,?,?,?)
         ');
 
-        $id_from_user = 4;
+        $data = Session::getInstance();
+
+        $id_from_user = $data -> id;
         $stmt->execute([
             $pin -> getName(),
             $pin -> getDescription(),
@@ -84,7 +87,7 @@ class PinRepository extends Repository {
     public function getByName(string $searchSting){
         $searchSting = '%'.strtolower($searchSting).'%';
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM pins WHERE lower(name) LIKE :search
+            SELECT * FROM pins WHERE LOWER(name) LIKE :search OR LOWER(address) LIKE :search
         ');
 
         $stmt -> bindParam(':search', $searchSting, PDO::PARAM_STR);
@@ -92,5 +95,29 @@ class PinRepository extends Repository {
 
         return $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
+    }
+
+    public function getById($id): array{
+        $result = [];
+        $stmt = $this->database->connect()->prepare('
+        SELECT * FROM pins WHERE id_from_user = :id
+        ');
+        $stmt -> bindParam(':id', $id);
+        $stmt -> execute();
+        $pins = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach($pins as $pin){
+            $result[] = new Place(
+                $pin['coordinates'],
+                $pin['name'],
+                $pin['descryption'],
+                $pin['address'],
+                $pin['img'],
+                $pin['tag']
+
+            );
+        }
+
+        return $result;
     }
 }

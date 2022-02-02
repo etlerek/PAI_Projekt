@@ -8,6 +8,8 @@ class User
     private $name;
     private $surname;
     private $nickname;
+    private $img = "/public/uploads/image0.png";
+
 
     public function __construct(int $id, string $email,string $password,string $name,string $surname, string $nickname)
     {
@@ -78,6 +80,16 @@ class User
     public function setNickname($nickname): void
     {
         $this->nickname = $nickname;
+    }
+
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    public function setImg($img): void
+    {
+        $this->img = $img;
     }
 
 }

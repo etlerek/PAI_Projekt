@@ -56,6 +56,8 @@ class SecurityController extends AppController
         $data->surname = $user -> getSurname();
         $data->nickname = $user -> getNickname();
         $data->password = $user -> getPassword();
+        $data->email = $user -> getEmail();
+        $data->img = $user -> getImg();
 
         //TODO: USUN NIZEJ TEST
 //        return $this ->render("login", ['messages' => [$data->id," ",$data->name," ",$data->surname] ]);

@@ -81,7 +81,6 @@ class PinController extends AppController
         }
     }
 
-
     private function validate(array $file): bool
     {
         if ($file['size'] > self::MAX_FILE_SIZE) {

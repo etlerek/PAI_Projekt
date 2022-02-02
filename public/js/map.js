@@ -58,13 +58,20 @@ function mapClickFn(coordinates) {
         ".json?access_token=" +
         `pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYm82aWcwY3FwMm91Z3RwNmpsZnRlIn0.JG6BWrbAXH-2dPS7AdKZNA` +
         "&types=address";
-    console.log(url);
     $.get(url, function (data) {
         if (data.features.length > 0) {
-            const address = data.features[0].place_name;
-            document.getElementById("address").value = address;
+            if(data.features[0].address == undefined){
+                const address = data.features[0].text + ", " + data.features[0].context[0].text + " " + data.features[0].context[1].text;
+                console.log(address);
+                document.getElementById("address").value = address;
+            }
+            else{
+                const address = data.features[0].text + " " + data.features[0].address + ", " + data.features[0].context[0].text + " " + data.features[0].context[1].text;
+                console.log(address);
+                document.getElementById("address").value = address;
+            }
         } else {
-            document.getElementById("address").value = "No address found";
+            document.getElementById("address").value = "Nie znaleziono adresu, proszę podać własny";
         }
     });
 }

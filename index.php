@@ -7,13 +7,14 @@ $path = parse_url($path, PHP_URL_PATH);
 
 Router::get('', 'DefaultController');
 //Router::get('map', 'DefaultController');
-Router::get('home', 'DefaultController');
+Router::get('home', 'CitiesController');
 Router::get('best_places', 'PinController');
 Router::get('test', 'DefaultController');
 Router::post('login', 'SecurityController');
 Router::post('register', 'SecurityController');
 Router::post('map', 'PinController');
 Router::post('search', 'PinController');
+Router::post('searchCities', 'CitiesController');
 Router::post('places', 'PinController');
 Router::post('profile', 'ProfileController');
 
