@@ -82,7 +82,7 @@
                 <form id = "profile" action = "profile" method="GET" enctype="multipart/form-data">
                     <button class = "profile" ><i class="far fa-user fa-4x"></i></button>
                 </form>
-                <button class = "pin_plus" type="button" onclick="showPinPlus()"> <i class="fas fa-plus fa-3x"> </i> </button>
+                <button class = "pin_plus" type="submit" onclick="showPinPlus()"> <i class="fas fa-plus fa-3x"> </i> </button>
                 <form id = "addPinForm" action = "map" method="POST" enctype="multipart/form-data">
                     <?php
                     if(isset($messages)){

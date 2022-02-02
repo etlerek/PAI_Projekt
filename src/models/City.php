@@ -3,14 +3,14 @@
 class City
 {
     private string $name;
-    private int $pinsNumber;
-    private string $imageUrl;
+    private string $img;
+    private string $coordinates;
 
-    public function __construct(string $name, int $pinsNumber, string $imageUrl)
+    public function __construct(string $name, string $img, string $coordinates)
     {
         $this->name = $name;
-        $this->pinsNumber = $pinsNumber;
-        $this->imageUrl = $imageUrl;
+        $this->img = $img;
+        $this->coordinates = $coordinates;
     }
 
     public function getName(): string
@@ -23,23 +23,24 @@ class City
         $this->name = $name;
     }
 
-    public function getPinsNumber(): int
+    public function getImg(): string
     {
-        return $this->pinsNumber;
+        return $this->img;
     }
 
-    public function setPinsNumber(int $pinsNumber): void
+    public function setImg(string $img): void
     {
-        $this->pinsNumber = $pinsNumber;
+        $this->img = $img;
     }
 
-    public function getImageUrl(): string
+    public function getCoordinates(): string
     {
-        return $this->imageUrl;
+        return $this->coordinates;
     }
 
-    public function setImageUrl(string $imageUrl): void
+    public function setCoordinates(string $coordinates): void
     {
-        $this->imageUrl = $imageUrl;
+        $this->coordinates = $coordinates;
     }
+
 }
