@@ -20,18 +20,16 @@ body{
     top: 0px;
     font: normal normal normal 35px Segoe UI;
     color: white;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     position: absolute;
     width: 80%;
 
 }
 
-.adres{
+.address{
     position: absolute;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     width: 50%;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
     left: auto;
 }
 
@@ -58,4 +56,24 @@ section img{
     height: 30vh;
     object-fit: cover;
     border-radius: 10px;
+}
+
+@media only screen and (max-device-width: 1200px) {
+    section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .left_bar{
+        /*TODO: to trzeba zmieniac na unset w js*/
+        display: flex;
+    }
+}
+@media only screen and (max-device-width: 800px) {
+    section {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #place{
+        width: 30vw;
+    }
 }
