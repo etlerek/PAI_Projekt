@@ -8,6 +8,13 @@ const map = new mapboxgl.Map({
     zoom: 7
 });
 
+const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+});
+
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
 fetch("/places").then(function (response) {
     return response.json();
 }).then(function (places) {

@@ -39,6 +39,24 @@ button.best_places{
 
 }
 
+
+.geocoder {
+    width: 80%;
+    margin: 1em;
+    align-self: center;
+    text-align: center;
+    font: normal normal bold 20px Clarendon;
+    background: transparent radial-gradient(closest-side at 50% 50%, #FFFFFF 0%, #421D1D 200%) 0% 0% no-repeat padding-box;
+    box-shadow: 2px 3px 99px #00000029;
+    border: 1px solid #707070;
+    border-radius: 25px;
+}
+
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+    background-color: transparent !important;
+}
+
 /*button.find_route{*/
 /*    height: 2em;*/
 /*    text-align: left;*/

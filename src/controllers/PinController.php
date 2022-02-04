@@ -5,6 +5,7 @@ require_once __DIR__."/../models/User.php";
 require_once __DIR__."/../models/Place.php";
 require_once __DIR__."/../repository/UserRepository.php";
 require_once __DIR__."/../repository/PinRepository.php";
+require_once __DIR__."/../repository/TagRepository.php";
 
 class PinController extends AppController
 {
@@ -15,15 +16,18 @@ class PinController extends AppController
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
     private $pinRepository;
+    private $tagRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->pinRepository = new PinRepository();
+        $this->tagRepository = new TagRepository();
     }
 
     public function map() {
 
+        $tags = $this -> tagRepository -> getTags();
         if($this ->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])){
 
             move_uploaded_file(
@@ -43,16 +47,17 @@ class PinController extends AppController
             $this->pinRepository->addPin($pin);
 
             //return $this -> render('best_places', ['pins' => $this->pinRepository -> getPins()]);
-            return $this -> render('map');
+            return $this -> render('map' , ['tags' => $tags]);
         }
 
-        $this -> render('map');
+        $this -> render('map', ['tags' => $tags]);
     }
 
     public function best_places() {
 
         $pins = $this -> pinRepository -> getPins();
-        $this -> render('best_places', ['pins' => $pins]);
+        $tags = $this -> tagRepository -> getTags();
+        $this -> render('best_places', ['pins' => $pins, 'tags' => $tags]);
     }
 
     public function places(){

@@ -8,7 +8,9 @@
 
 <body>
     <div class="container">
-        <img class = "logo" src="public/imgs/logo1.svg">
+        <a href="http://localhost:8080/home">
+            <img class = "logo" src="public/imgs/logo1.svg">
+        </a>
 		<div class = "login_container">
 			<form action = "login" method="POST">
                 <div class="messages">
