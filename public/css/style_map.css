@@ -67,6 +67,17 @@ body {
     align-items: end;
 }
 
+.more{
+    position: absolute;
+    box-shadow: 2px 3px 99px #00000029;
+    width: 80px;
+    height: 80px;
+    border: 5px solid #CC1E25;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    margin: 1em;
+}
 
 .map_buttons button{
     pointer-events: all;
@@ -81,19 +92,6 @@ body {
 .map_buttons button:hover {
     cursor: pointer;
     background: #CC1E25;
-}
-
-.more{
-    position: absolute;
-    display: none;
-    box-shadow: 2px 3px 99px #00000029;
-    width: 80px;
-    height: 80px;
-    border: 5px solid #CC1E25;
-    border-radius: 50px;
-    top: 0;
-    left: 0;
-    margin: 1em;
 }
 
 input{
@@ -137,9 +135,5 @@ form button{
         height: 80px;
         border: 5px solid #CC1E25;
         margin-left: 0;
-    }
-
-    .more{
-        display: unset;
     }
 }
