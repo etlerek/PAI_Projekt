@@ -98,6 +98,32 @@ input{
     pointer-events: all;
 }
 
+h2{
+    font: italic normal bold 20px/25px Segoe UI;
+    letter-spacing: 0px;
+    color: #FDFDFD;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#addPinForm input{
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+#addPinForm textarea{
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+#title{
+    margin: 1em !important;
+}
+
+#coordinates{
+    display: none;
+}
+
 textarea{
     pointer-events: all;
     align-self: center;

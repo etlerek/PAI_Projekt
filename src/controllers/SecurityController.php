@@ -46,7 +46,7 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
         }
 
-        if ($user->getPassword() !== $password) {
+        if ($user->getPassword() !== $password or $user->getPassword() == null) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
@@ -80,8 +80,11 @@ class SecurityController extends AppController
         $name = $_POST['name'];
         $surname = $_POST['surname'];
 
+        if ($email == null) {
+            return $this->render('register', ['messages' => ['Please provide proper email']]);
+        }
 
-        if ($password !== $confirmedPassword) {
+        if ($password !== $confirmedPassword or $password == null) {
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 

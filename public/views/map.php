@@ -71,7 +71,7 @@
                         }
                     }
                     ?>
-                    <input name = "file" type="file">
+                    <h2>Wybierz miejsce dodania pinu oraz wpisz dane</h2>
                     <input id = "coordinates" name = "coordinates" type="text" placeholder="coordinates">
                     <input id = "title" name = "title" type="text" placeholder="tytuł">
                     <textarea id = "address" name = "address" rows = "2" type="text" placeholder="address"></textarea>
@@ -80,9 +80,11 @@
                     <input list="tagAddPin" name="tagAddPin" placeholder="tag">
                     <datalist id="tagAddPin">
                     <?php foreach($tags as $tag): ?>
-                            <option value="<?= $tag->getName()?>">
+                        <option value="<?= $tag->getName()?>"><?= $tag->getName()?></option>
                     <?php endforeach; ?>
                     </datalist>
+
+                    <input id = "file" name = "file" type="file">
                     <div class = add_pin_buttons>
                         <button class="button-1" type="submit" ><i class="fas fa-check fa-3x"></i></button>
                         <button class="back" type="button" onclick="showPinPlus()"><i class="fas fa-times fa-3x"></i></button>
