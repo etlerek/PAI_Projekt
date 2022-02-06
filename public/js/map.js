@@ -1,3 +1,4 @@
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiZXRsZXJlayIsImEiOiJja3ZrYm82aWcwY3FwMm91Z3RwNmpsZnRlIn0.JG6BWrbAXH-2dPS7AdKZNA';
 
 const map = new mapboxgl.Map({
@@ -14,23 +15,26 @@ const geocoder = new MapboxGeocoder({
 });
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+loadPlaces();
 
-fetch("/places").then(function (response) {
-    return response.json();
-}).then(function (places) {
+function loadPlaces() {
+    fetch("/places").then(function (response) {
+        return response.json();
+    }).then(function (places) {
 
-    places.map(place => {
-        place.coordinates = JSON.parse(place.coordinates);
-    })
+        places.map(place => {
+            place.coordinates = JSON.parse(place.coordinates);
+        })
 
-    displayPlaces(places);
-});
+        displayPlaces(places);
+    });
+}
 
-// add markers to map
 function displayPlaces(places){
     for (const feature of places) {
         // create a HTML element for each feature
         const el = document.createElement('div');
+        console.log(feature.tag);
         el.className = 'marker';
         // make a marker for each feature and add it to the map
         new mapboxgl.Marker(el)
@@ -38,7 +42,7 @@ function displayPlaces(places){
             .setPopup(
                 new mapboxgl.Popup({ offset: 25 }) // add popups
                     .setHTML(
-                        `<img style = height = '100%' width = '100%' margin = 0 src = 'public/uploads/${feature.img}' > <h3>${feature.name}</h3></img><p>${feature.descryption}</p><h5>tag: ${feature.tag}</h5>`
+                        `<img style = height = '100%' width = '100%' margin = 0 src = 'public/uploads/${feature.img}' > <h3>${feature.name}</h3><h6>${feature.address}</h6></img><p>${feature.descryption}</p><h5>tag: ${feature.tag}</h5>`
                     )
             )
             .addTo(map);

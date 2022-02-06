@@ -42,6 +42,17 @@ body {
     border-top-right-radius: 25px;
 }
 
+.mapboxgl-popup-content h3{
+    margin: 0 !important;
+}
+
+.mapboxgl-popup-content h6{
+    margin: 0 !important;
+}
+
+
+
+
 #info {
     display: none;
     left: 0;
@@ -166,7 +177,6 @@ textarea{
 form button{
     justify-content: space-between;
 }
-
 
 @media only screen and (max-device-width: 800px) {
     .map_buttons button {

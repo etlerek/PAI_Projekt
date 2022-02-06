@@ -5,10 +5,7 @@ class Session
     const SESSION_STARTED = TRUE;
     const SESSION_NOT_STARTED = FALSE;
 
-    // The state of the session
     private $sessionState = self::SESSION_NOT_STARTED;
-
-    // THE only instance of the class
     private static $instance;
 
 
@@ -54,12 +51,6 @@ class Session
         unset( $_SESSION[$name] );
     }
 
-
-    /**
-    *    Destroys the current session.
-    *
-    *    @return    bool    TRUE is session has been deleted, else FALSE.
-    **/
 
     public function destroy()
     {

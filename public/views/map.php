@@ -12,6 +12,7 @@
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js" defer></script>
     <script src="./public/js/buttonsHandler.js" crossorigin="anonymous" defer></script>
     <script type = text/javascript src="./public/js/map.js" crossorigin="anonymous" defer></script>
+    <script type = text/javascript src="./public/js/filter.js" crossorigin="anonymous" defer></script>
 
 
     <link
@@ -42,7 +43,7 @@
             <div class = "filters">
                 <?php foreach($tags as $tag): ?>
                     <div class = "checkbox">
-                        <input type="checkbox" id="tag" value="coding">
+                        <input type="checkbox" id="<?= $tag->getName()?>" value="<?= $tag->getName()?>" onclick="clickCheckbox()">
                         <span class="checkmark"><?= $tag->getName()?></span>
                     </div>
                 <?php endforeach; ?>

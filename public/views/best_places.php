@@ -21,10 +21,10 @@
                 <button class = "best_places">mapa</button>
             </form>
             <p> Aktywne filtry </p>
-            <div class = "filters">
+            <div class = "filters" id = "filters">
                 <?php foreach($tags as $tag): ?>
                     <div class = "checkbox">
-                        <input type="checkbox" id="tag" value="coding">
+                        <input type="checkbox" id="<?= $tag -> getName(); ?>" value="coding">
                         <span class="checkmark"><?= $tag->getName()?></span>
                     </div>
                 <?php endforeach; ?>
