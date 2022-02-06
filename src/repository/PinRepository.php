@@ -7,7 +7,7 @@ class PinRepository extends Repository {
 
     public function getPin(int $id): ?Place{
         $stmt = $this->database->connect()->prepare("
-            SELECT * FROM public.pins WHERE id = :id
+            SELECT * FROM public.pins WHERE id = :id 
         ");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -84,32 +84,39 @@ class PinRepository extends Repository {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getByName(string $searchSting){
+//    public function getByName(string $searchSting){
+//        $searchSting = '%'.strtolower($searchSting).'%';
+//        $stmt = $this->database->connect()->prepare('
+//            SELECT * FROM pins WHERE LOWER(name) LIKE :search OR LOWER(address) LIKE :search
+//        ');
+//
+//        $stmt -> bindParam(':search', $searchSting, PDO::PARAM_STR);
+//        $stmt -> execute();
+//
+//        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
+//
+//    }
+
+    public function getByName(string $searchSting, array $searchTags){
+
         $searchSting = '%'.strtolower($searchSting).'%';
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM pins WHERE LOWER(name) LIKE :search OR LOWER(address) LIKE :search
-        ');
+
+        if(empty($searchTags)) {
+            $stmt = $this->database->connect()->prepare('SELECT * FROM pins WHERE LOWER(name) LIKE :search OR LOWER(address) LIKE :search');
+        }
+
+        else {
+            $stmt = $this->database->connect()->prepare('SELECT * FROM pins WHERE ((LOWER(name) LIKE :search OR LOWER(address) LIKE :search) AND (tag LIKE :searchTag))');
+            $stmt -> bindParam(':searchTag',$searchTags[0], PDO::PARAM_STR);
+        }
 
         $stmt -> bindParam(':search', $searchSting, PDO::PARAM_STR);
         $stmt -> execute();
 
         return $stmt -> fetchAll(PDO::FETCH_ASSOC);
 
-    }
 
-//    public function getByName(string $searchSting, string $searchTags){
-//        $searchSting = '%'.strtolower($searchSting).'%';
-//        $stmt = $this->database->connect()->prepare('
-//            SELECT * FROM pins WHERE LOWER(name) LIKE :search OR LOWER(address) LIKE :search OR tag LIKE :searchTag
-//        ');
-//
-//        $stmt -> bindParam(':search', $searchSting, PDO::PARAM_STR);
-//        $stmt -> bindParam(':searchTag',$searchTags, PDO::PARAM_STR);
-//        $stmt -> execute();
-//
-//        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
-//
-//    }
+    }
 
     public function getById($id): array{
         $result = [];
