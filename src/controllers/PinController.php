@@ -83,7 +83,7 @@ class PinController extends AppController
             header('Content-type: application/json');
             http_response_code(200);
 
-            echo json_encode($this->pinRepository->getByName($decoded['search'], $decoded['tags'][0]));
+            echo json_encode($this->pinRepository->getByName($decoded['search'], $decoded['tags']));
         }
     }
 

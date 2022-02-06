@@ -4,8 +4,10 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_left_bar.css">
     <link rel="stylesheet" type="text/css" href="public/css/style_best_places.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/aae19cf5aa.js" crossorigin="anonymous"></script>
     <script src="./public/js/search.js" defer></script>
+    <script src="./public/js/filter.js" defer></script>
     <title>Best Places</title>
 </head>
 
@@ -24,7 +26,7 @@
             <div class = "filters" id = "filters">
                 <?php foreach($tags as $tag): ?>
                     <div class = "checkbox">
-                        <input type="checkbox" id="<?= $tag -> getName(); ?>" value="coding">
+                        <input type="checkbox" class = "radio" id="<?= $tag -> getName(); ?>" name="tag">
                         <span class="checkmark"><?= $tag->getName()?></span>
                     </div>
                 <?php endforeach; ?>
@@ -37,7 +39,9 @@
         <section class="places">
             <?php foreach($pins as $pin): ?>
                 <div id = "place" class="place">
-                    <img src="public/uploads/<?= $pin->getImageUrl() ?>">
+                    <a href = "http://localhost:8080/map">
+                        <img src="public/uploads/<?= $pin->getImageUrl() ?>">
+                    </a>
                     <div class="name"><?= $pin->getName() ?></div>
                     <div class="address"><?= $pin->getAddress()?></div>
                 </div>
