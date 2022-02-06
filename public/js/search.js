@@ -5,7 +5,12 @@ search.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
 
-        const data = {search: this.value};
+        const tags = [...document.querySelectorAll('.filters input')]
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.id);
+        console.log(tags);
+
+        const data = {search: this.value, tags};
 
         fetch("/search", {
             method: "POST",
