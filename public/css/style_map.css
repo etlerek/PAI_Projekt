@@ -20,13 +20,26 @@ body {
     cursor: pointer;
 }
 
+.mapboxgl-popup-tip {
+    border-top-color: #421d1d !important;
+    border-bottom-color: red !important;
+}
+
 .mapboxgl-popup {
     max-width: 200px;
 }
 
 .mapboxgl-popup-content {
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    font: normal normal normal 20px Segoe UI;
+    background: transparent linear-gradient(180deg, #352626 0%, #D3121AF0 42%, #C51017 63%, #421D1D 100%) 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    padding: 0;
+}
+
+.mapboxgl-popup-content img{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
 #info {
@@ -67,6 +80,17 @@ body {
     align-items: end;
 }
 
+.more{
+    position: absolute;
+    box-shadow: 2px 3px 99px #00000029;
+    width: 80px;
+    height: 80px;
+    border: 5px solid #CC1E25;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+    margin: 1em;
+}
 
 .map_buttons button{
     pointer-events: all;
@@ -83,21 +107,34 @@ body {
     background: #CC1E25;
 }
 
-.more{
-    position: absolute;
-    display: none;
-    box-shadow: 2px 3px 99px #00000029;
-    width: 80px;
-    height: 80px;
-    border: 5px solid #CC1E25;
-    border-radius: 50px;
-    top: 0;
-    left: 0;
-    margin: 1em;
-}
-
 input{
     pointer-events: all;
+}
+
+h2{
+    font: italic normal bold 20px/25px Segoe UI;
+    letter-spacing: 0px;
+    color: #FDFDFD;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#addPinForm input{
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+#addPinForm textarea{
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+#title{
+    margin: 1em !important;
+}
+
+#coordinates{
+    display: none;
 }
 
 textarea{
@@ -137,9 +174,5 @@ form button{
         height: 80px;
         border: 5px solid #CC1E25;
         margin-left: 0;
-    }
-
-    .more{
-        display: unset;
     }
 }

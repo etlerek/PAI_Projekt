@@ -9,7 +9,7 @@ function isEmail(email){
 }
 
 function arePasswordsSame(password, confirmedPassword){
-    return password === confirmedPassword
+    return password === confirmedPassword && password != null;
 }
 
 function markValidation(element, condition){

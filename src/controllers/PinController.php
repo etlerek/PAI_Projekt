@@ -41,7 +41,7 @@ class PinController extends AppController
                 $_POST['description'],
                 $_POST['address'],
                 $_FILES['file']['name'],
-                $_POST['tag']
+                $_POST['tagAddPin']
             );
 
             $this->pinRepository->addPin($pin);

@@ -37,7 +37,6 @@ button{
     width: 50%;
     font: normal normal normal 35px/47px Segoe UI;
     letter-spacing: 0px;
-    margin: 0.5em;
     color: #FFFEFE;
     margin-bottom: 1em;
     background: #CC1E25 0% 0% no-repeat padding-box;
@@ -52,6 +51,7 @@ input{
     letter-spacing: 0px;
     color: #707070;
     border-bottom: 1px solid #707070;
+    margin-bottom: 1em;
     padding: 0.5em;
 }
 
@@ -85,10 +85,24 @@ p{
     .logo{
         width: 500px;
     }
+
+    input{
+        margin: 0;
+    }
+
+    button{
+        margin: 0.5em;
+    }
     
     form{
         height: auto;
         width: 100%;
         margin:auto;
+    }
+}
+
+@media only screen and (max-device-height: 720px) {
+    .container{
+        justify-content: unset;
     }
 }

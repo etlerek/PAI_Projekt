@@ -16,14 +16,6 @@ class Session
 
     }
 
-
-    /**
-    *    Returns THE instance of 'Session'.
-    *    The session is automatically initialized if it wasn't.
-    *
-    *    @return    object
-    **/
-
     public static function getInstance(){
         if ( !isset(self::$instance)) {
             self::$instance = new self;
@@ -34,13 +26,6 @@ class Session
         return self::$instance;
     }
 
-
-    /**
-    *    (Re)starts the session.
-    *
-    *    @return    bool    TRUE if the session has been initialized, else FALSE.
-    **/
-
     public function startSession(){
         if ( $this->sessionState == self::SESSION_NOT_STARTED ) {
             $this->sessionState = session_start();
@@ -49,28 +34,9 @@ class Session
         return $this->sessionState;
     }
 
-
-    /**
-    *    Stores datas in the session.
-    *    Example: $instance->foo = 'bar';
-    *
-    *    @param    name    Name of the datas.
-    *    @param    value    Your datas.
-    *    @return    void
-    **/
-
     public function __set( $name , $value ){
         $_SESSION[$name] = $value;
     }
-
-
-    /**
-    *    Gets datas from the session.
-    *    Example: echo $instance->foo;
-    *
-    *    @param    name    Name of the datas to get.
-    *    @return    mixed    Datas stored in session.
-    **/
 
     public function __get( $name ){
         if ( isset($_SESSION[$name])) {
