@@ -20,13 +20,26 @@ body {
     cursor: pointer;
 }
 
+.mapboxgl-popup-tip {
+    border-top-color: #421d1d !important;
+    border-bottom-color: red !important;
+}
+
 .mapboxgl-popup {
     max-width: 200px;
 }
 
 .mapboxgl-popup-content {
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    font: normal normal normal 20px Segoe UI;
+    background: transparent linear-gradient(180deg, #352626 0%, #D3121AF0 42%, #C51017 63%, #421D1D 100%) 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    padding: 0;
+}
+
+.mapboxgl-popup-content img{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
 #info {

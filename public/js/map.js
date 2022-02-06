@@ -38,7 +38,7 @@ function displayPlaces(places){
             .setPopup(
                 new mapboxgl.Popup({ offset: 25 }) // add popups
                     .setHTML(
-                        `<h3>${feature.name}</h3><p>${feature.descryption}</p>`
+                        `<img style = height = '100%' width = '100%' margin = 0 src = 'public/uploads/${feature.img}' > <h3>${feature.name}</h3></img><p>${feature.descryption}</p><h5>tag: ${feature.tag}</h5>`
                     )
             )
             .addTo(map);
