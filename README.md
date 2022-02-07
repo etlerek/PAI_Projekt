@@ -8,22 +8,22 @@ Projekt stworzony na przedmiot "Wstęp do programowania aplikacji internetowych"
 W celu uruchomienia projektu należy sklonować repozytorium lub pobrać kod źródłowy oraz mieć zainstalowane narzędzie Docker. W głównym katalogu projektu następnie należy użyć polecenia docker-compose up. Aplikacja uruchomi się na lokalnym serwerze :http://localhost:8080/
 
 ## 4. Poszczególne widoki:
-### 1. Logowanie
+### a) Logowanie
 Użytkownik może zalogować się na wcześniej utworzone konto podając swój email i hasło
 
-### 2. Rejestracja
+### b) Rejestracja
 Z tego widoku użytkownik tworzy konto podając email, hasło, pseudonim, imię i nazwisko
 
-### 3. Widok domowy
+### c) Widok domowy
 Prototypowy widok, pokazujący istniejące w bazie miasta, możliwość przejścia do profilu użytkownika i mapy
 
-### 4. Mapa
+### d) Mapa
 Wyświetla mapę, wraz z pinami dodanymi przez użytkowników. Po naciśnięciu na pina użytkownik może rozwinąć dokładniejszy opis pina który go interesuje.
 
-### 5. Najlepsze piny
+### e) Najlepsze piny
 Widok wyświetla piny z możliwością filtrowania ich według nazwy, adresów i tagów.
 
-### 6. Profil użytkownika
+### f) Profil użytkownika
 Użytkownik może przeglądać dodane przez siebie piny, sprawdzać informacje o koncie i wylogowywać się.
 
 
