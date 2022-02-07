@@ -49,6 +49,18 @@ class PinRepository extends Repository {
 
         ]);
 
+        try{
+            $stmt = $this->database->connect()->prepare('
+        INSERT INTO tags (name)
+        VALUES (?)
+        ');
+            $stmt->execute([
+                $pin -> getTag()
+            ]);
+        }
+        catch(Exception $e){
+
+        }
     }
 
     public function getPins(): array{
@@ -83,19 +95,6 @@ class PinRepository extends Repository {
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-//    public function getByName(string $searchSting){
-//        $searchSting = '%'.strtolower($searchSting).'%';
-//        $stmt = $this->database->connect()->prepare('
-//            SELECT * FROM pins WHERE LOWER(name) LIKE :search OR LOWER(address) LIKE :search
-//        ');
-//
-//        $stmt -> bindParam(':search', $searchSting, PDO::PARAM_STR);
-//        $stmt -> execute();
-//
-//        return $stmt -> fetchAll(PDO::FETCH_ASSOC);
-//
-//    }
 
     public function getByName(string $searchSting, array $searchTags){
 
