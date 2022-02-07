@@ -66,6 +66,11 @@ p{
     outline: none;
 }
 
+.messages{
+    font: normal normal bold 25px Segoe UI;
+    background: lightcoral;
+}
+
 @media only screen and (max-device-width: 600px){
 
     .container{

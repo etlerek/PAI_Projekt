@@ -8,6 +8,8 @@ const map = new mapboxgl.Map({
     zoom: 12
 });
 
+
+
 const geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl: mapboxgl

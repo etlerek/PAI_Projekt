@@ -13,8 +13,8 @@
         </a>
 		<div class = "login_container">
 			<form action = "login" method="POST">
+                <p>Zaloguj się! </p>
                 <div class="messages">
-                    <p>Zaloguj się! </p>
                     <?php
                     if(isset($messages)){
                         foreach($messages as $message) {

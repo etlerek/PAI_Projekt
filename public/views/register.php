@@ -12,8 +12,8 @@
         <img class = "logo" src="public/imgs/logo1.svg">
 		<div class = "login_container">
 			<form action = "register" method="POST">
+                <p>Zarejestruj się! </p>
                 <div class="messages">
-                    <p>Zarejestruj się! </p>
                     <?php
                     if(isset($messages)){
                         foreach($messages as $message) {

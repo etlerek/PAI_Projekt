@@ -51,6 +51,8 @@
                             <img src="public/uploads/<?= $place->getImageUrl() ?>">
                             <div class="name"><?= $place->getName() ?></div>
                             <div class="address"><?= $place->getAddress()?></div>
+                            <div class="descryption"><?= $place->getDescription() ?></div>
+                            <div class="tag">tag: <?= $place->getTag() ?></div>
                         </div>
                     <?php endforeach; ?>
                 </section>
