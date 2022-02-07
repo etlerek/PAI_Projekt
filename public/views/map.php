@@ -49,7 +49,7 @@
                 <?php endforeach; ?>
             </div>
             <div class = "bottom_buttons">
-                <button class = "back" type="button" onclick='showLeftBar()'><i class="fas fa-chevron-left fa-3x"></i></button>
+                <button class = "back" type="button" onclick='show("left_bar")'><i class="fas fa-chevron-left fa-3x"></i></button>
                 <button class = "options" type="button"><i class="fas fa-cog fa-3x"></i></button>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <?php
                 if($data)
                     if(isset($_SESSION['id']))
-                        echo "<button class = 'pin_plus' type='submit' onclick='showPinPlus()'> <i class='fas fa-plus fa-3x'> </i> </button>"
+                        echo "<button class = 'pin_plus' type='submit' onclick='show(\"addPinForm\")'> <i class='fas fa-plus fa-3x'> </i> </button>"
                 ?>
                 <form id = "addPinForm" action = "map" method="POST" enctype="multipart/form-data">
                     <?php
@@ -88,12 +88,12 @@
                     <input id = "file" name = "file" type="file">
                     <div class = add_pin_buttons>
                         <button class="button-1" type="submit" ><i class="fas fa-check fa-3x"></i></button>
-                        <button class="back" type="button" onclick="showPinPlus()"><i class="fas fa-times fa-3x"></i></button>
+                        <button class="back" type="button" onclick="show('addPinForm')"><i class="fas fa-times fa-3x"></i></button>
                     </div>
 
                 </form>
             </div>
-        <button class = "more" onclick='showLeftBar()'> <i class="fas fa-sliders-h fa-3x"></i> </button>
+        <button class = "more" onclick='show("left_bar")'> <i class="fas fa-sliders-h fa-3x"></i> </button>
     </div>
 
 

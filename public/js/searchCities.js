@@ -1,8 +1,6 @@
 const searchCites = document.querySelector('input[placeholder="Wybierz miasto"]');
 const citiesContainer = document.querySelector(".cities");
 
-console.log(JSON.stringify("dupa"));
-
 searchCites.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         event.preventDefault();
