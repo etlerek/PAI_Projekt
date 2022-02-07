@@ -15,8 +15,4 @@ class DefaultController extends AppController {
 
         $this -> render('test');
     }
-
-    public function profile() {
-        $this -> render('profile');
-    }
 }
