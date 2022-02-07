@@ -160,6 +160,13 @@ button{
         margin-left: 4em;
     }
 
+    .address{
+        font: normal normal normal 25px Segoe UI;
+        color: white;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        margin-bottom: 4em;
+    }
+
     .place img{
         width: 80vw;
         height: 40vh;

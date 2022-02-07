@@ -5,8 +5,7 @@ const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
     center: [19.9, 50.07],
-    //center: [-77.032, 38.913],
-    zoom: 7
+    zoom: 12
 });
 
 const geocoder = new MapboxGeocoder({

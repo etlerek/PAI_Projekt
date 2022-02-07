@@ -34,7 +34,7 @@ class SecurityController extends AppController
         }
 
         $email = $_POST["email"];
-        $password = md5($_POST['password']);
+        $password = hash('sha256',$_POST['password']);
 
         $user = $this->userRepository->getUser($email);
 
@@ -88,7 +88,7 @@ class SecurityController extends AppController
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
-        $user = new User(-1, $email, md5($password), $name, $surname, $nickname);
+        $user = new User(-1, $email, hash('sha256',$password), $name, $surname, $nickname);
 
         $this->userRepository->addUser($user);
 

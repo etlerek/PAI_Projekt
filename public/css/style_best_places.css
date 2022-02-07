@@ -99,6 +99,11 @@ section img{
         background: #CC1E25;
     }
 
+    .address{
+        font-size: 23px;
+        width: 45vw;
+    }
+
     #place{
         width: 30vw;
         margin:1em;
