@@ -10,10 +10,17 @@ body{
 }
 
 .place{
+    display: flex;
+    background: transparent radial-gradient(closest-side at 50% 50%, #ffffff2b 0%, #3a1e1e 100%) 0% 0% no-repeat padding-box;
+    flex-direction: column;
+    border: 1px solid black;
+    left: auto;
+    width: 22vw;
+    height: 44vh;
     position: relative;
     text-align: left;
-    color:white;
-    margin-bottom: 20px;
+    color: white;
+    border-radius: 25px;
 }
 
 .name{
@@ -23,19 +30,39 @@ body{
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     position: absolute;
     width: 80%;
+    margin-left: 5px;
 
 }
 
 .address{
-    position: absolute;
+
+    font: normal normal bold 15px Segoe UI;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    width: 50%;
+    height: 10%;
+    margin-bottom: 1px;
     left: auto;
+    margin-left: 5px;
+}
+
+.descryption{
+
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    width: 100%;
+    left: auto;
+    margin-left: 5px;
 }
 
 .score{
     position: absolute;
     right:20%;
+    margin-left: 5px;
+}
+
+.tag{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -50px;
 }
 
 section {
@@ -73,6 +100,10 @@ section img{
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .descryption{
+        font: normal normal normal 25px Segoe UI;
+    }
+
     section img{
         width: 50vw;
         height: 40vh;
@@ -90,7 +121,7 @@ section img{
     }
 }
 
-@media only screen and (max-device-width: 500px) {
+@media only screen and (max-device-width: 810px) {
     .checkbox input{
         width: 1em;
         height: 1em;
@@ -105,7 +136,7 @@ section img{
     }
 
     #place{
-        width: 30vw;
+        width: 45vw;
         margin:1em;
     }
 

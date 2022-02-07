@@ -46,8 +46,11 @@ function createPin(pin){
     const name = clone.querySelector(".name");
     name.innerHTML = pin.name;
     const address = clone.querySelector(".address");
-    console.log(pin);
     address.innerHTML = pin.address;
+    const desc = clone.querySelector(".descryption");
+    desc.innerHTML = pin.descryption;
+    const tag = clone.querySelector(".tag");
+    tag.innerHTML = pin.tag;
 
     pinsContainer.appendChild(clone);
 }

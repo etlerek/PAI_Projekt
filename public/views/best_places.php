@@ -44,6 +44,8 @@
                     </a>
                     <div class="name"><?= $pin->getName() ?></div>
                     <div class="address"><?= $pin->getAddress()?></div>
+                    <div class="descryption"><?= $pin->getDescription() ?></div>
+                    <div class="tag">tag: <?= $pin->getTag() ?></div>
                 </div>
             <?php endforeach; ?>
         </section>
@@ -56,6 +58,8 @@
         <img src="">
         <div class="name">name</div>
         <div class="address">address</div>
+        <div class="descryption">descryption</div>
+        <div class="tag">tag</div>
     </div>
 </template>
 </html>
